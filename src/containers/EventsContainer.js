@@ -8,7 +8,7 @@ class EventsContainer extends React.Component {
         return (
             <div>
                 <EventInput />
-                <EventList />
+                {/* <EventList /> */}
             </div>
         )
     }
