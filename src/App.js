@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import { fetchEvents } from './actions/fetchEvents';
+import EventsContainer from './containers/EventsContainer'
 
 class App extends React.Component {
 
@@ -13,7 +13,7 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        App
+        <EventsContainer />
       </div>
     );
   }
@@ -24,6 +24,6 @@ class App extends React.Component {
 //   return
 // }
 
-export default connect(null, {fetchEvents})(App);
+export default App;
 //connect expects an immediate return from fetchEvents(actioncreator).
 // That's why we use thunk. it lets us call dispatch from inside the action creator
