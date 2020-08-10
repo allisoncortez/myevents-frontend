@@ -14,7 +14,7 @@ class EventsContainer extends React.Component {
         return (
             <div>
                 <EventInput />
-                <EventList />
+                <EventList events={this.props.events} />
             </div>
         )
     }
