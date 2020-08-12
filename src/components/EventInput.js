@@ -21,14 +21,13 @@ class EventInput extends React.Component {
     handleOnSubmit = (e) => {
         e.preventDefault()
         this.props.addEvent(this.state)
-        this.setState({
-            title:'',
-            description:'',
-            startTime:'',
-            endTime:'',
-            location:''
-        })
-
+        // this.setState({
+        //     title:'',
+        //     description:'',
+        //     startTime:'',
+        //     endTime:'',
+        //     location:''
+        // })
     }
 
     render() {
