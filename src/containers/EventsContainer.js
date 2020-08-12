@@ -8,9 +8,10 @@ class EventsContainer extends React.Component {
 
     componentDidMount(){
         this.props.fetchEvents()
-        // console.log(this.props)
+        // console.log(this.props.fetchEvents())
     }
     render() {
+        console.log(this.props.events)
         return (
             <div>
                 <EventInput />
@@ -20,17 +21,24 @@ class EventsContainer extends React.Component {
     }
 }
 
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         fetchEvents: () => dispatch(fetchEvents())
-//     }
-// }
-
-const mapStateToProps = state => {
+const mapDispatchToProps = dispatch => {
     return {
-        events: state.events
+      fetchEvents: () => dispatch(fetchEvents())
     }
 }
 
+// const mapStateToProps = state => {
+//     return {
+//         events: state.events
+//     }
+// }
 
-export default connect(mapStateToProps, {fetchEvents})(EventsContainer)
+// const mapStateToProps = state => {
+//     // debugger
+//     return {events: state.events}
+// }
+
+const mapStateToProps = ({events}) => ({events})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(EventsContainer)

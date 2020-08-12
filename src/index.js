@@ -7,10 +7,10 @@ import eventReducer from './reducers/eventReducer'
 //use combineReducer when you have multiple
 import App from './App'
 
+// const store = createStore(compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()))
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-let store = createStore(eventReducer, composeEnhancers(applyMiddleware(thunk)))
+const store = createStore(eventReducer, composeEnhancers(applyMiddleware(thunk)))
 
 ReactDOM.render(
   <Provider store={store}>
