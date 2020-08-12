@@ -1,12 +1,14 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import {addEvent} from '../actions/addEvent'
 
 class EventInput extends React.Component {
 
     state = {
         title:'',
         description:'',
-        startDate:'',
-        endDate:'',
+        startTime:'',
+        endTime:'',
         location:''
     }
 
@@ -17,9 +19,15 @@ class EventInput extends React.Component {
     }
 
     handleOnSubmit = (e) => {
-        debugger
         e.preventDefault()
-        
+        this.props.addEvent(this.state)
+        this.setState({
+            title:'',
+            description:'',
+            startTime:'',
+            endTime:'',
+            location:''
+        })
 
     }
 
@@ -34,9 +42,9 @@ class EventInput extends React.Component {
                     {/* <label>Location</label><br /> */}
                     <input type='text' placeholder='Location' name="location" value={this.state.location} onChange={this.handleOnChange} /> <br />
                     <label>Starts</label><br />
-                    <input type='datetime-local' name="startDate" value={this.state.startDate} onChange={this.handleOnChange} /> <br />
+                    <input type='datetime-local' name="startTime" value={this.state.startTime} onChange={this.handleOnChange} /> <br />
                     <label>Ends</label><br />
-                    <input type='datetime-local' name="endDate" value={this.state.endDate} onChange={this.handleOnChange} /> <br />
+                    <input type='datetime-local' name="endTime" value={this.state.endTime} onChange={this.handleOnChange} /> <br />
                     <br/>
 
                     <input type="submit" />
@@ -46,4 +54,4 @@ class EventInput extends React.Component {
     }
 }
 
-export default EventInput
+export default connect(null, {addEvent}) (EventInput)

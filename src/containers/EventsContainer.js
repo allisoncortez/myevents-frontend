@@ -20,11 +20,11 @@ class EventsContainer extends React.Component {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        fetchEvents: () => dispatch(fetchEvents())
-    }
-}
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         fetchEvents: () => dispatch(fetchEvents())
+//     }
+// }
 
 const mapStateToProps = state => {
     return {
@@ -33,4 +33,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(EventsContainer)
+export default connect(mapStateToProps, {fetchEvents})(EventsContainer)
