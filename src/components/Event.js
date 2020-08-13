@@ -1,15 +1,17 @@
-import React, {Component} from 'react'
+import React from 'react'
 
-class Account extends Component {
-    // console.log(props)
-    render(){
-        const {title, description, startTime, endTime, location, id} = this.props.event.attributes
+const Event = (props) => {
+
+        console.log(props)
+        // const {title, description, startTime, endTime, location, id} = this.props.event.attributes
+        let event = props.events[props.match.params.id - 1]
+        console.log(event)
         return (
             <li>
-                {title} {startTime}
+                {event ? event.attributes.title : null} - {event ? event.attributes.startTime : null}
+                {/* {event.attributes.description} */}
             </li>
         )
-    }
 }
 
-export default Account
+export default Event

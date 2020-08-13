@@ -1,22 +1,22 @@
 import React, {Component} from 'react'
-import Event from './Event'
+// import Event from './Event'
+import {Link} from 'react-router-dom'
 
 class EventList extends Component {
-    // renderEvents = () => {
-    //     // debugger
-    //     return this.props.events.map( (event) => {
-    //         return <Event key={event.id} event={event} />
-    //     })
-    // }
     
     render(){
-        // debugger
-        console.log(this.props.events)
+        // console.log(this.props.events)
         return (
             
-            <ul> 
-                {this.props.events.map((event) => { return <Event event={event} key={event.id}/>} )}
-            </ul>
+            <div>
+                {/* {this.props.events.map((event) => { return <Event event={event} key={event.id}/>} )} */}
+
+                {this.props.events.map((event) =>
+                    <li key={event.id}>
+                        <Link to={`/events/${event.id}`}> {event.attributes.title}</Link>
+                    </li>
+                )}
+            </div>
         )
     }
 }
