@@ -1,4 +1,5 @@
 import React from 'react'
+import CommentsContainer from '../containers/CommentsContainer'
 
 const Event = (props) => {
 
@@ -7,10 +8,10 @@ const Event = (props) => {
         let event = props.events[props.match.params.id - 1]
         console.log(event)
         return (
-            <li>
-                {event ? event.attributes.title : null} - {event ? event.attributes.startTime : null}
-                {/* {event.attributes.description} */}
-            </li>
+            <div>
+                <h1> {event ? event.attributes.title : null} - {event ? event.attributes.startTime : null} </h1>
+                <CommentsContainer />
+            </div>
         )
 }
 
