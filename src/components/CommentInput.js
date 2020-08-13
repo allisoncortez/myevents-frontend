@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import { addComment } from '../actions/addComment'
 
 class CommentInput extends React.Component {
 
@@ -15,12 +16,16 @@ class CommentInput extends React.Component {
 
     handleOnSubmit = (e) => {
         e.preventDefault()
-
+        this.props.addComment(this.state, this.props.event.id)
+        this.setState({
+            description:''
+        })
     }
+
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.handleOnSubmit}>
                     <textarea rows="5" cols="33"
                     placeholder="what did you think?"
                     name="description"
@@ -35,4 +40,4 @@ class CommentInput extends React.Component {
     }
 }
 
-export default connect(null)(CommentInput)
+export default connect(null, {addComment})(CommentInput)

@@ -7,7 +7,7 @@ class CommentsContainer extends React.Component {
         console.log (this.props)
         return (
             <div>
-                <CommentInput />
+                <CommentInput event={this.props.event}/>
                 <Comments comments={this.props.event && this.props.event.attributes.comments}/>
             </div>
         )

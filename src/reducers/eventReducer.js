@@ -1,7 +1,7 @@
 
 export default function eventReducer(state = {events: []}, action) {
 // export default function eventReducer(state = [{events: {}}], action) {
-// debugger
+debugger
     switch (action.type) {
         case 'FETCH_EVENTS':
             // return {...state, events: action.payload}
