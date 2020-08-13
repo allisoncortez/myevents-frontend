@@ -9,6 +9,6 @@ export const addComment = (comment, eventId) => {
         })
         .then(resp => resp.json())
         // .then(event => console.log(event))
-        .then(event => dispatch({ type: 'ADD_COMMENT', payload: event }))
+        .then(comment => dispatch({ type: 'ADD_COMMENT', payload: comment.data }))
     }
 }
