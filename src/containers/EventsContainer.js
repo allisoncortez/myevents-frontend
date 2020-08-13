@@ -1,8 +1,10 @@
 import React from 'react'
 import EventList from '../components/EventList'
 import EventInput from '../components/EventInput'
+// import Event from '../components/Event'
 import {connect} from 'react-redux'
 import {fetchEvents} from '../actions/fetchEvents'
+import {Route} from 'react-router-dom'
 
 class EventsContainer extends React.Component {
 
@@ -14,8 +16,8 @@ class EventsContainer extends React.Component {
         console.log(this.props.events)
         return (
             <div>
-                <EventInput />
-                <EventList events={this.props.events} />
+                <Route path='/events/new' component={EventInput} />
+                <Route exact path='/events' render={(routerProps) => <EventList {...routerProps} events={this.props.events}/>} />
             </div>
         )
     }
