@@ -1,8 +1,6 @@
 import React from 'react'
 
 const Comments = (props) => {
-    console.log(props.comments)
-
 
     return (
         <div>
