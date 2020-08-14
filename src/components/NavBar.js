@@ -5,7 +5,7 @@ const NavBar = () => {
     return (
         <div className="ui borderless huge menu">
             <Link to="/" className="item">AAMO</Link>
-                <Link to="/events" className="item">Browse</Link>
+                <Link to="/events" className="item">Explore</Link>
             <div className="right menu">
                 <Link to="/events/new" className="item">add an EVENT</Link>
             </div>

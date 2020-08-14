@@ -6,6 +6,7 @@ const App = () => {
     return (
       <div className="ui container">
         <NavBar />
+        {/* intro block here */}
         <EventsContainer />
       </div>
     )
