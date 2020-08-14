@@ -4,7 +4,7 @@ import NavBar from './components/NavBar'
 
 const App = () => {
     return (
-      <div className="App">
+      <div className="ui container">
         <NavBar />
         <EventsContainer />
       </div>

@@ -3,17 +3,11 @@ import {Link} from 'react-router-dom'
 
 const NavBar = () => {
     return (
-        <div class="ui borderless huge menu">
-            <a class="item">
-            <Link to="/">AAMO</Link>
-            </a>
-            <a class="item">
-                <Link to="/events">Browse</Link>
-            </a>
-            <div class="right menu">
-                <a class="item">
-                <Link to="/events/new">add an EVENT</Link>
-                </a>
+        <div className="ui borderless huge menu">
+            <Link to="/" className="item">AAMO</Link>
+                <Link to="/events" className="item">Browse</Link>
+            <div className="right menu">
+                <Link to="/events/new" className="item">add an EVENT</Link>
             </div>
         </div>
     )
