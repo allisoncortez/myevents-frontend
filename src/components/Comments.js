@@ -7,7 +7,7 @@ const Comments = (props) => {
     const handleDelete = (comment) => {
         props.deleteComment(comment.id, comment.event_id)
     }
-
+    console.log(props)
     return (
         <div>
             {props.comments && props.comments.map(comment =>
