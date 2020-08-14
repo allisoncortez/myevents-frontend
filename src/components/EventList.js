@@ -2,15 +2,24 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 
 class EventList extends Component {
+    renderEvents() {
+        return this.props.events.map((event) => {
+            return (
+                <div className="item" key={event.id}>
+                        <div className="content">
+                            <h1><Link to={`/events/${event.id}`}> {event.attributes.title} @ 7 p.m.</Link></h1>
+                            {/* <div className="description"> <h3>{event.attributes.description}</h3></div> */}
+                        </div>
+                </div>
+            )
+        })
+
+    } 
     
     render(){
         return (   
             <div>
-                {this.props.events.map((event) =>
-                    <li key={event.id}>
-                        <Link to={`/events/${event.id}`}> {event.attributes.title}</Link>
-                    </li>
-                )}
+                <div className="ui celled list">{this.renderEvents()}</div>
             </div>
         )
     }
