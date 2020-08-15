@@ -26,7 +26,8 @@ class EventInput extends React.Component {
             description:'',
             startTime:'',
             endTime:'',
-            location:''
+            location:'',
+            category:'art'
         })
     }
 
@@ -56,6 +57,14 @@ class EventInput extends React.Component {
                         <label>Location</label>
                         <input type='text' placeholder='Location' name="location" value={this.state.location} onChange={this.handleOnChange} />
                     </div>
+                    <div className="field">
+                        <label>Art or Music?</label>
+                        <select name="category" value={this.state.category} onChange={this.handleOnChange}>
+                            <option>art</option>
+                            <option>music</option>
+                        </select>
+                    </div>
+                    
                     <input type="submit" />
                 </form>
             </div>
