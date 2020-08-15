@@ -7,11 +7,11 @@ const Comments = (props) => {
     const handleDelete = (comment) => {
         props.deleteComment(comment.id, comment.event_id)
     }
-    console.log(props)
+    
     return (
         <div>
-            {props.comments && props.comments.map(comment =>
-                <li key={comment.id}>{comment.description} <button onClick={() => handleDelete(comment)}>Delete</button> </li>
+            {props.comments && props.comments.map(comment => 
+                <li key={comment.id}>{comment.description} <button onClick={() => handleDelete(comment)}>Delete</button></li>
             )}
         </div>
     )
