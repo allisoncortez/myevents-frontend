@@ -9,7 +9,8 @@ class EventInput extends React.Component {
         description:'',
         startTime:'',
         endTime:'',
-        location:''
+        location:'',
+        category:'art'
     }
 
     handleOnChange = (e) => {
@@ -27,7 +28,7 @@ class EventInput extends React.Component {
             startTime:'',
             endTime:'',
             location:'',
-            category:'art'
+            category:''
         })
     }
 
