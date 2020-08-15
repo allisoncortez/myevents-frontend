@@ -66,7 +66,7 @@ class EventInput extends React.Component {
                         </select>
                     </div>
                     
-                    <input type="submit" />
+                    <button class="ui teal button">Submit</button>
                 </form>
             </div>
         )

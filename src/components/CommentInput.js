@@ -24,14 +24,15 @@ class CommentInput extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleOnSubmit}>
-                    <textarea rows="5" cols="33"
-                    placeholder="what did you think?"
-                    name="description"
-                    value={this.state.description}
-                    onChange={this.handleOnChange}/>
-                    <br></br>
-                    <input type="submit" />
+                <form onSubmit={this.handleOnSubmit} className="ui form">
+                    <div className="field">
+                        <textarea 
+                        placeholder="what did you think?"
+                        name="description"
+                        value={this.state.description}
+                        onChange={this.handleOnChange}/>
+                    </div>
+                    <button class="ui teal button">Submit</button>
                 </form>
                 <br></br>
             </div>
