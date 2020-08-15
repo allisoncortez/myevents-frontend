@@ -1,38 +1,30 @@
 import React, {Component} from 'react'
-// import Event from './Event'
 import {Link} from 'react-router-dom'
 
 class EventList extends Component {
+    renderEvents() {
+        return this.props.events.map((event) => {
+            return (
+                // <div className="ui basic center aligned segment">
+                    <div className="item" key={event.id}>
+                            <div className="content">
+                                <h1><Link to={`/events/${event.id}`}> {event.attributes.title} @ 7 p.m.</Link></h1>
+                                {/* <div className="description"> <h3>{event.attributes.description}</h3></div> */}
+                            </div>
+                    </div>
+                // </div>
+            )
+        })
+
+    } 
     
     render(){
-        // console.log(this.props.events)
-        return (
-            
+        return (   
             <div>
-                {/* {this.props.events.map((event) => { return <Event event={event} key={event.id}/>} )} */}
-
-                {this.props.events.map((event) =>
-                    <li key={event.id}>
-                        <Link to={`/events/${event.id}`}> {event.attributes.title}</Link>
-                    </li>
-                )}
+                <div className="ui celled list">{this.renderEvents()}</div>
             </div>
         )
     }
 }
-
-// import React from 'react'
-// import Event from './Event'
-
-// const EventList = props => {
-//     // debugger
-//     // console.log(props)
-//     return (
-//         <div>
-//             eventlist
-//             {props.events.map((event, idx) => <div key={idx}> < Event event={event.name}/></div> )}
-//         </div>
-//     )
-// }
 
 export default EventList
