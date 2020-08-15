@@ -6,6 +6,7 @@ const Event = (props) => {
         return (
             <div>
                 <h1> {event ? event.attributes.title : null} - {event ? event.attributes.category : null} </h1>
+                <p>{event ? event.attributes.description : null}</p>
                 <CommentsContainer event={event}/>
             </div>
         )
