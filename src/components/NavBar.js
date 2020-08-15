@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 const NavBar = () => {
     return (
-        <div className="ui borderless huge menu">
+        <div className="ui secondary huge pointing menu">
             <Link to="/" className="item">AAMO</Link>
                 <Link to="/events" className="item">Explore</Link>
             <div className="right menu">
