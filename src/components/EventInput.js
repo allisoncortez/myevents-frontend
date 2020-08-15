@@ -34,27 +34,28 @@ class EventInput extends React.Component {
         return (
             <div>
                 <form onSubmit={this.handleOnSubmit} className="ui form">
-                    <div className="field">
-                        <label>Event Title</label>
-                        <input type='text' placeholder='Title' name="title" value={this.state.title} onChange={this.handleOnChange} />
+                    <div className="three fields">
+                        <div className="field">
+                            <label>Event Name</label>
+                            <input type='text' placeholder="What's it called?" name="title" value={this.state.title} onChange={this.handleOnChange} />
+                        </div>
+                        <div className="field">
+                            <label>Starts</label>
+                            <input type='datetime-local' name="startTime" value={this.state.startTime} onChange={this.handleOnChange} />
+                        </div>
+                        <div className="field">
+                            <label>Ends</label>
+                            <input type='datetime-local' name="endTime" value={this.state.endTime} onChange={this.handleOnChange} />
+                        </div>
                     </div>
                     <div className="field">
-                    <label>Description</label>
-                    <textarea rows="5" cols="33" placeholder='Enter your description here...' name="description" value={this.state.description} onChange={this.handleOnChange} />
+                        <label>Description</label>
+                        <textarea placeholder='Live DJ? Free food?? Tell us about it...' name="description" value={this.state.description} onChange={this.handleOnChange} />
                     </div>
                     <div className="field">
-                    <label>Location</label>
-                    <input type='text' placeholder='Location' name="location" value={this.state.location} onChange={this.handleOnChange} />
+                        <label>Location</label>
+                        <input type='text' placeholder='Location' name="location" value={this.state.location} onChange={this.handleOnChange} />
                     </div>
-                    <div className="field">
-                    <label>Starts</label>
-                    <input type='datetime-local' name="startTime" value={this.state.startTime} onChange={this.handleOnChange} />
-                    </div>
-                    <div className="field">
-                    <label>Ends</label>
-                    <input type='datetime-local' name="endTime" value={this.state.endTime} onChange={this.handleOnChange} />
-                    </div>
-
                     <input type="submit" />
                 </form>
             </div>
