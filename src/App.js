@@ -4,9 +4,12 @@ import NavBar from './components/NavBar'
 
 const App = () => {
     return (
-      <div className="ui container">
+      <div>
         <NavBar />
-        {/* intro block here */}
+        <div className="ui placeholder segment">
+          <h1 className="ui centered header huge">AMMO</h1>
+        </div>
+        
         <EventsContainer />
       </div>
     )

@@ -8,7 +8,7 @@ class EventList extends Component {
                 // <div className="ui basic center aligned segment">
                     <div className="item" key={event.id}>
                             <div className="content">
-                                <h1><Link to={`/events/${event.id}`}> {event.attributes.title} @ 7 p.m.</Link></h1>
+                                <Link to={`/events/${event.id}`}> <h1 className="ui black header huge">{event.attributes.title} @ 7 p.m. </h1></Link>
                                 {/* <div className="description"> <h3>{event.attributes.description}</h3></div> */}
                             </div>
                     </div>

@@ -37,7 +37,8 @@ class EventInput extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="ui container">
+                
                 <form onSubmit={this.handleOnSubmit} className="ui form">
                     <div className="three fields">
                         <div className="field">
