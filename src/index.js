@@ -18,8 +18,6 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <App />
-      <Header />
-
     </Router>
   </Provider>,
   document.getElementById('root')
