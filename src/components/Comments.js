@@ -9,16 +9,18 @@ const Comments = (props) => {
     }
     
     return (
-            <div className="ui celled list">
-                <h3 class="ui header">Comments</h3>
-                    {props.comments && props.comments.map(comment =>
-                            <div className="item">
-                                <div className="content" key={comment.id}> {comment.description} </div>
-                                <div className="right floated content">
-                                    <button className="ui button" onClick={() => handleDelete(comment)}>Delete</button>
+            <div>
+                {props.comments && props.comments.map(comment =>
+                    <div className="comment">
+                            <div className="content" key={comment.id}>
+                                {comment.description}
+                                <div className="actions">
+                                    <a className="reply" onClick={() => handleDelete(comment)}>Delete</a>
                                 </div>
                             </div>
+                    </div>
                     )}
+                    <br></br>
             </div>
     )
 }
