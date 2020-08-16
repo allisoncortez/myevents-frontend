@@ -20,6 +20,10 @@ class EventsContainer extends React.Component {
                     <Route path='/events/:id' render={(routerProps) => <Event {...routerProps} events={this.props.events} />}/>
                     <Route exact path='/' render={(routerProps) => <EventList {...routerProps} events={this.props.events}/>} />
                 </Switch>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
             </div>
         )
     }
