@@ -7,6 +7,7 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import eventReducer from './reducers/eventReducer'
 //use combineReducer when you have multiple
 import App from './App'
+import Header from './components/Header'
 
 // const store = createStore(compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()))
 
@@ -17,6 +18,8 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <App />
+      <Header />
+
     </Router>
   </Provider>,
   document.getElementById('root')

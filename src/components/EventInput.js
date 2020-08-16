@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {addEvent} from '../actions/addEvent'
 // import {Link} from 'react-router-dom'
+import Header from './Header'
 
 class EventInput extends React.Component {
 
@@ -37,8 +38,9 @@ class EventInput extends React.Component {
 
     render() {
         return (
+            <div>
+                <Header />
             <div className="ui container">
-                
                 <form onSubmit={this.handleOnSubmit} className="ui form">
                     <div className="three fields">
                         <div className="field">
@@ -73,6 +75,7 @@ class EventInput extends React.Component {
                     <button className="ui teal button">Submit</button>
                     {/* <Link to="/events" classname="ui teal button">Submit</Link> */}
                 </form>
+            </div>
             </div>
         )
     }
