@@ -14,7 +14,6 @@ class EventList extends Component {
                         <div className="ui clearing divider"></div>
                     </div>
                     <br></br>
-                    
                 </div>
             )
         })

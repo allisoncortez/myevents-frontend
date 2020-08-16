@@ -35,13 +35,6 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-// const mapStateToProps = state => {
-//     return {
-//         events: state.events
-//     }
-// }
-
 const mapStateToProps = ({events}) => ({events})
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventsContainer)
