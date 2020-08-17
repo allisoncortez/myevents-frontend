@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 const NavBar = () => {
     return (
         <div className="ui huge secondary menu">
-            <Link to="/" className="item">AAMO</Link>
+            <Link to="/events" className="item">AAMO</Link>
                 
             <div className="right menu">
                     <div className="item">

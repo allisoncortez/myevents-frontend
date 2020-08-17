@@ -14,6 +14,5 @@ export const addEvent = (eventFormData) => {
               type:'ADD_EVENT',
               payload: newEvent
             }))
-        .catch(console.log())
     }
 }

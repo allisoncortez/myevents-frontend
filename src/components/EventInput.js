@@ -25,7 +25,7 @@ class EventInput extends React.Component {
         // debugger
         e.preventDefault()
         this.props.addEvent(this.state)
-        this.props.history.push('/')
+        this.props.history.push('/events')
         // this.setState({
         //     title:'',
         //     description:'',

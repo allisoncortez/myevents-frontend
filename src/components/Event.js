@@ -4,6 +4,7 @@ import CommentsContainer from '../containers/CommentsContainer'
 const Event = (props) => {
         console.log(props)
         let event = props.events[props.match.params.id - 1]
+        
         return (
             <div className="ui container">
                 <img className="ui fluid image" src="/AAMO-hpcover-01.png" alt="event placeholder" />
