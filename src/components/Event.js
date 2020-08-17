@@ -5,12 +5,12 @@ const Event = (props) => {
         let event = props.events[props.match.params.id - 1]
         return (
             <div className="ui container">
-                
-                    <h1 className="ui center aligned header"> {event ? event.attributes.title : null}</h1>
-                    <h5 className="description">{event ? event.attributes.description : null}</h5>
-                    <div className="ui segment">
+                <img className="ui fluid image" src="/AAMO-hpcover-01.png" />
+                <h1>{event ? event.attributes.title : null}</h1>
+                {event ? event.attributes.location : null}, 77068 / 7 p.m. - Midnight <br></br><br></br>
+                {event ? event.attributes.description : null}
                         <CommentsContainer event={event}/>
-                    </div>
+
                 
             </div>
         )
