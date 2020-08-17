@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {deleteComment} from '../actions/deleteComment'
 
 const Comments = (props) => {
-    console.log(props)
+    // console.log(props)
     const handleDelete = (comment) => {
         props.deleteComment(comment.id, comment.event_id)
     }

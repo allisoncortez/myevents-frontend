@@ -4,7 +4,7 @@ export default function eventReducer(state = {events: [], comments: []}, action)
     switch (action.type) {
         case 'FETCH_EVENTS':
             return {...state, events: action.payload}
-        case 'ADD_EVENTS':
+        case 'ADD_EVENT':
             return {...state, events: [...state.events, action.payload] }
         case 'ADD_COMMENT':
             return {...state, comments: [...state.comments, action.payload] }

@@ -10,9 +10,9 @@ export const addEvent = (eventFormData) => {
             },body: JSON.stringify(eventFormData)
           })
         .then(response => response.json())
-        .then(newEvent => dispatch({
+        .then(event => dispatch({
               type:'ADD_EVENT',
-              payload: newEvent
+              payload: event.data
             }))
     }
 }
