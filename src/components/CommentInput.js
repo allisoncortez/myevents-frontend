@@ -28,7 +28,7 @@ class CommentInput extends React.Component {
                     <div className="ui field">
                         <textarea name="description" value={this.state.description} onChange={this.handleOnChange}/>
                     </div>
-                    <button class="ui teal labeled submit icon button"> <i class="icon edit"></i>Submit</button>
+                    <button className="ui teal labeled submit icon button"> <i className="icon edit"></i>Submit</button>
                 </form>
                 <br></br>
             </div>

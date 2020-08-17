@@ -3,7 +3,9 @@ import CommentInput from '../components/CommentInput'
 import Comments from '../components/Comments'
 
 class CommentsContainer extends React.Component {
+    
     render() {
+        console.log(this.props)
         return (
             <div className="ui comments">
                 <div className="ui dividing header">Comments</div>
