@@ -6,14 +6,11 @@ class EventList extends Component {
     renderEvents() {
         return this.props.events.map((event) => {
             return (
-                <div>
-                    <div key={event.id}>
-                        <h5 className="ui header centered">HOSTNAME</h5>
-                        <Link to={`/events/${event.id}`}><h1 className="ui header centered huge">{event.attributes.title}</h1></Link>
-                        <h5 className="ui header centered">{event.attributes.location} @ 7 p.m.</h5>
-                        <div className="ui clearing divider"></div>
-                    </div>
-                    <br></br>
+                <div key={event.id}>
+                    <h5 className="ui header centered">HOSTNAME</h5>
+                    <Link to={`/events/${event.id}`}><h1 className="ui header centered huge">{event.attributes.title}</h1></Link>
+                    <h5 className="ui header centered">{event.attributes.location} @ 7 p.m.</h5>
+                    <div className="ui clearing divider"></div>
                 </div>
             )
         })
