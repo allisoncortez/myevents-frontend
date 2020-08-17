@@ -1,10 +1,10 @@
 
-export const listEvents = events => {
-    return {
-        type: "FETCH_EVENTS",
-        events
-    }
-}
+// export const listEvents = events => {
+//     return {
+//         type: "FETCH_EVENTS",
+//         events
+//     }
+// }
 
 
 export const fetchEvents = () => {
@@ -18,11 +18,11 @@ export const fetchEvents = () => {
         })
         .then(response => response.json())
         // .then(events => console.log(events.data))
-        // .then(events => dispatch ({
-        //     type: 'FETCH_EVENTS',
-        //     payload: events.data
-        // }))
-        .then(eventData => dispatch(listEvents(eventData.data)))
-        .catch(console.log())
+        .then(events => dispatch ({
+            type: 'FETCH_EVENTS',
+            payload: events.data
+        }))
+        // .then(eventData => dispatch(listEvents(eventData.data)))
+        // .catch(console.log())
     }
 }
