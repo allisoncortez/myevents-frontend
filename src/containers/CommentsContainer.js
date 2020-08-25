@@ -3,9 +3,13 @@ import CommentInput from '../components/CommentInput'
 import Comments from '../components/Comments'
 
 class CommentsContainer extends React.Component {
+
+    // componentDidMount(){
+    //     this.props.fetchComments()
+    // }
     
     render() {
-        // console.log(this.props)
+        console.log(this.props)
         return (
             <div className="ui comments">
                 <div className="ui dividing header">Comments</div>
@@ -15,5 +19,11 @@ class CommentsContainer extends React.Component {
         )
     }
 }
+
+// const mapStateToProps = state => {
+//     return {
+//         comments: state.comments
+//     }
+// }
 
 export default CommentsContainer
