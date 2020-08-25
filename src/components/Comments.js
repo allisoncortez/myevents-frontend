@@ -3,14 +3,17 @@ import {connect} from 'react-redux'
 import {deleteComment} from '../actions/deleteComment'
 
 const Comments = (props) => {
-    // console.log(props)
+    // console.log(props.comments)
+
+    const comments = props.comments
+
     const handleDelete = (comment) => {
         props.deleteComment(comment.id, comment.event_id)
     }
     
     return (
             <div>
-                {props.comments && props.comments.map(comment =>
+                {comments && comments.map(comment =>
                     <div className="comment" key={comment.id}>
                             <div className="content">
                                 {comment.description}
