@@ -8,6 +8,7 @@ const Comments = (props) => {
     const comments = props.comments
 
     const handleDelete = (comment) => {
+        // debugger
         props.deleteComment(comment.id, comment.event_id)
     }
     

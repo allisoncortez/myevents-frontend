@@ -12,7 +12,6 @@ const Event = (props) => {
                 {event ? event.attributes.location : null}, 77068 / 7 p.m. - Midnight <br></br><br></br>
                 {event ? event.attributes.description : null}
                 <CommentsContainer event={event}/>
-
                 
             </div>
         )
