@@ -1,3 +1,9 @@
+AAMO is a art and music event listing app, designed to make event browsing more of an enjoyable experience.
+
+## Setup
+1. You will need to run the [backend](https://github.com/allisoncortez/myevents-backend) first. Run the rails server to get this API up and running.
+2. Clone this directory and start up the frontend using 'npm start'. If you're not automatically redirected, you'll need to open up http://localhost:3001 to view this app in the browser.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
