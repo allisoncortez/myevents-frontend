@@ -1,7 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {addEvent} from '../actions/addEvent'
-// import {Link} from 'react-router-dom'
 import Header from './Header'
 
 class EventInput extends React.Component {
@@ -22,18 +21,9 @@ class EventInput extends React.Component {
     }
 
     handleOnSubmit = (e) => {
-        // debugger
         e.preventDefault()
         this.props.addEvent(this.state)
         this.props.history.push('/events')
-        // this.setState({
-        //     title:'',
-        //     description:'',
-        //     startTime:'',
-        //     endTime:'',
-        //     location:'',
-        //     category:''
-        // })
     }
 
     render() {
@@ -73,7 +63,6 @@ class EventInput extends React.Component {
                     </div>
                     
                     <button className="ui teal button">Submit</button>
-                    {/* <Link to="/events" classname="ui teal button">Submit</Link> */}
                 </form>
             </div>
             </div>

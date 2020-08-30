@@ -3,12 +3,9 @@ import {connect} from 'react-redux'
 import {deleteComment} from '../actions/deleteComment'
 
 const Comments = (props) => {
-    // console.log(props.comments)
-
     const comments = props.comments
 
     const handleDelete = (comment) => {
-        // debugger
         props.deleteComment(comment.id, comment.event_id)
     }
     
@@ -24,11 +21,9 @@ const Comments = (props) => {
                             </div>
                     </div>
                     )}
-                    <br></br>
-                    
+                    <br></br>  
             </div>
     )
-
 }
 
 export default connect(null, {deleteComment})(Comments)
