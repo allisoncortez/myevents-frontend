@@ -1,3 +1,4 @@
+## AAMO
 AAMO is a art and music event listing app, designed to make event browsing more of an enjoyable experience.
 
 ## Setup
