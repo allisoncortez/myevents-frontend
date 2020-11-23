@@ -14,7 +14,6 @@ const EventsContainer = () => {
     useEffect(()=> {
         dispatch(fetchEvents())
     }, [] ) 
-        // this.props.fetchEvents()
 
     const events = useSelector(state => state.events)
 
@@ -43,6 +42,6 @@ const EventsContainer = () => {
 //mapStateToProps=>useSelector
 // const mapStateToProps = ({events}) => ({events})
 
-// export default connect(mapStateToProps, mapDispatchToProps)(EventsContainer)
 
+// export default connect(mapStateToProps, mapDispatchToProps)(EventsContainer)
 export default EventsContainer
