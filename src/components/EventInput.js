@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
-import {connect} from 'react-redux'
+import React, {useState, useEffect} from 'react'
+import {useDispatch} from 'react-redux'
 import {addEvent} from '../actions/addEvent'
 import Header from './Header'
 
-const EventInput = () => {
+const EventInput = (props) => {
 
     const initialState = {
         title:'',
@@ -16,21 +16,22 @@ const EventInput = () => {
 
     const [state, setState] = useState(initialState)
 
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(addEvent())
+    }, [])
+
     const handleOnChange = (e) => {
-        // this.setState({
-        //     [e.target.name]: e.target.value
-        // })
-        setState(prevState => {
-            return {
-                ...prevState,
-                [e.target.name]: e.target.value
-            }
+        setState({
+            ...state,
+            [e.target.name]: e.target.value
         })
     }
 
     const handleOnSubmit = (e) => {
         e.preventDefault()
-        props.addEvent(state)
+        dispatch(addEvent(state))
+        
         setState({
             title:'',
             description:'',
@@ -46,7 +47,7 @@ const EventInput = () => {
             <div>
                 <Header />
             <div className="ui container">
-                <form onSubmit={handleOnSubmit} className="ui form">
+                <form onSubmit={(e) => handleOnSubmit(e)} className="ui form">
                     <div className="three fields">
                         <div className="field">
                             <label>Event Name</label>
@@ -84,4 +85,5 @@ const EventInput = () => {
         )
 }
 
-export default connect(null, {addEvent}) (EventInput)
+
+export default EventInput
