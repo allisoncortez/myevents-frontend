@@ -16,6 +16,7 @@ const EventsContainer = () => {
     }, [] ) 
 
     const events = useSelector(state => state.events)
+    
 
         return (
             <div>

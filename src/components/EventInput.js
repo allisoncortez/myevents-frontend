@@ -1,11 +1,11 @@
-import React from 'react'
-import {connect} from 'react-redux'
+import React, {useState, useEffect} from 'react'
+import {useDispatch} from 'react-redux'
 import {addEvent} from '../actions/addEvent'
 import Header from './Header'
 
-class EventInput extends React.Component {
+const EventInput = (props) => {
 
-    state = {
+    const initialState = {
         title:'',
         description:'',
         startTime:'',
@@ -14,49 +14,65 @@ class EventInput extends React.Component {
         category:'art'
     }
 
-    handleOnChange = (e) => {
-        this.setState({
+    const [state, setState] = useState(initialState)
+
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(addEvent())
+    }, [])
+
+    const handleOnChange = (e) => {
+        setState({
+            ...state,
             [e.target.name]: e.target.value
         })
     }
 
-    handleOnSubmit = (e) => {
+    const handleOnSubmit = (e) => {
         e.preventDefault()
-        this.props.addEvent(this.state)
-        this.props.history.push('/events')
+        dispatch(addEvent(state))
+        
+        setState({
+            title:'',
+            description:'',
+            startTime:'',
+            endTime:'',
+            location:'',
+            category:'art'
+        })
+        props.history.push('/events')
     }
 
-    render() {
         return (
             <div>
                 <Header />
             <div className="ui container">
-                <form onSubmit={this.handleOnSubmit} className="ui form">
+                <form onSubmit={(e) => handleOnSubmit(e)} className="ui form">
                     <div className="three fields">
                         <div className="field">
                             <label>Event Name</label>
-                            <input type='text' placeholder="What's it called?" name="title" value={this.state.title} onChange={this.handleOnChange} />
+                            <input type='text' placeholder="What's it called?" name="title" value={state.title} onChange={handleOnChange} />
                         </div>
                         <div className="field">
                             <label>Starts</label>
-                            <input type='datetime-local' name="startTime" value={this.state.startTime} onChange={this.handleOnChange} />
+                            <input type='datetime-local' name="startTime" value={state.startTime} onChange={handleOnChange} />
                         </div>
                         <div className="field">
                             <label>Ends</label>
-                            <input type='datetime-local' name="endTime" value={this.state.endTime} onChange={this.handleOnChange} />
+                            <input type='datetime-local' name="endTime" value={state.endTime} onChange={handleOnChange} />
                         </div>
                     </div>
                     <div className="field">
                         <label>Description</label>
-                        <textarea placeholder='Live DJ? Free food?? Tell us about it...' name="description" value={this.state.description} onChange={this.handleOnChange} />
+                        <textarea placeholder='Live DJ? Free food?? Tell us about it...' name="description" value={state.description} onChange={handleOnChange} />
                     </div>
                     <div className="field">
                         <label>Location</label>
-                        <input type='text' placeholder='Location' name="location" value={this.state.location} onChange={this.handleOnChange} />
+                        <input type='text' placeholder='Location' name="location" value={state.location} onChange={handleOnChange} />
                     </div>
                     <div className="field">
                         <label>Art or Music?</label>
-                        <select name="category" value={this.state.category} onChange={this.handleOnChange}>
+                        <select name="category" value={state.category} onChange={handleOnChange}>
                             <option>art</option>
                             <option>music</option>
                         </select>
@@ -67,7 +83,7 @@ class EventInput extends React.Component {
             </div>
             </div>
         )
-    }
 }
 
-export default connect(null, {addEvent}) (EventInput)
+
+export default EventInput
