@@ -1,5 +1,5 @@
 ## AAMO
-AAMO is a art and music event listing app, designed to make event browsing more of an enjoyable experience.
+AAMO is a art and music event listing app, designed to make event browsing more of an enjoyable experience. This front end app is made with React.js & Redux, and connects to a Rails API on the backend.
 
 ## Setup
 1. You will need open up the [backend](https://github.com/allisoncortez/myevents-backend). Run 'rails server' to get this API up and running.
