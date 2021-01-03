@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import EventList from '../components/EventList'
 import EventInput from '../components/EventInput'
 import Event from '../components/Event'
-// import {connect} from 'react-redux'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchEvents } from '../actions/fetchEvents'
 import {Route, Switch} from 'react-router-dom'
@@ -17,7 +16,6 @@ const EventsContainer = () => {
 
     const events = useSelector(state => state.events)
     
-
         return (
             <div>
                 <Switch>
