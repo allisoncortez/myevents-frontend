@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
+import { useDispatch } from 'react-redux'
 import {deleteComment} from '../actions/deleteComment'
 
 const Comments = (props) => {
@@ -7,7 +8,13 @@ const Comments = (props) => {
 
     const handleDelete = (comment) => {
         props.deleteComment(comment.id, comment.event_id)
+
     }
+
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(deleteComment())
+    }, [])
     
     return (
             <div>
