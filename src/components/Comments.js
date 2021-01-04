@@ -6,15 +6,14 @@ import {deleteComment} from '../actions/deleteComment'
 const Comments = (props) => {
     const comments = props.comments
 
-    const handleDelete = (comment) => {
-        // props.deleteComment(comment.id, comment.event_id)
-        dispatch(deleteComment(comment.id, comment.event_id))
-    }
-
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(deleteComment())
     }, [])
+
+    const handleDelete = (comment) => {
+        dispatch(deleteComment(comment.id, comment.event_id))
+    }
     
     return (
             <div>
