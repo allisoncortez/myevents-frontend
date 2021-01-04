@@ -32,4 +32,5 @@ const Comments = (props) => {
     )
 }
 
-export default connect(null, {deleteComment})(Comments)
+// export default connect(null, {deleteComment})(Comments)
+export default Comments
