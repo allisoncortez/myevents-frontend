@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react'
-import {connect} from 'react-redux'
 import { useDispatch } from 'react-redux'
 import {deleteComment} from '../actions/deleteComment'
 
@@ -32,5 +31,4 @@ const Comments = (props) => {
     )
 }
 
-// export default connect(null, {deleteComment})(Comments)
 export default Comments
