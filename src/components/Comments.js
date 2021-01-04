@@ -1,12 +1,17 @@
-import React from 'react'
-import {connect} from 'react-redux'
+import React, {useEffect} from 'react'
+import { useDispatch } from 'react-redux'
 import {deleteComment} from '../actions/deleteComment'
 
 const Comments = (props) => {
     const comments = props.comments
 
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(deleteComment())
+    }, [])
+
     const handleDelete = (comment) => {
-        props.deleteComment(comment.id, comment.event_id)
+        dispatch(deleteComment(comment.id, comment.event_id))
     }
     
     return (
@@ -26,4 +31,4 @@ const Comments = (props) => {
     )
 }
 
-export default connect(null, {deleteComment})(Comments)
+export default Comments
