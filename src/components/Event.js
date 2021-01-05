@@ -2,7 +2,7 @@ import React from 'react'
 import CommentsContainer from '../containers/CommentsContainer'
 
 const Event = (props) => {
-        console.log(props)
+        // console.log(props)
         let event = props.events[props.match.params.id - 1]
         
         return (
